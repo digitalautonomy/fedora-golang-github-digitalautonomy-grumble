@@ -3,10 +3,8 @@ Spec files uploaded to Fedora's repo auto download the source code. I would fix 
 
 ```
 git clone https://github.com/digitalautonomy/grumble.git
-mv gotk3adapter gotk3adapter-8ad62a930093c5c48a13619223885d6ac3418bb0
 mv grumble/ grumble-c109af8d88b4b9cb77afe1f18572c66027cf8c0b
 tar zcf grumble-c109af8d88b4b9cb77afe1f18572c66027cf8c0b.tar.gz grumble-c109af8d88b4b9cb77afe1f18572c66027cf8c0b/
-rm -rf grumble-c109af8d88b4b9cb77afe1f18572c66027cf8c0b
 ```
 
 To build this package you would need to install the `golang-x-crypto-devel, golang-github-protobuf-devel, golang-github-gorilla-websocket-devel
