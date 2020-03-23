@@ -13,7 +13,7 @@ build:
     - fedpkg --release f30 local
     - 'find . -name "*fc30*.rpm" -exec mv {} f30 \;'
     - fedpkg --release f31 local
-    - 'find . -name "*fc30*.rpm" -exec mv {} f31 \;'
+    - 'find . -name "*fc31*.rpm" -exec mv {} f31 \;'
   artifacts:
     paths:
       - 'f30/*.rpm'
