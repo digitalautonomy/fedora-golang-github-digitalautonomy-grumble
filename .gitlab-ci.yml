@@ -9,22 +9,9 @@ build:
     - chmod 644 ~/.ssh/known_hosts
 
   script:
-    - git clone https://github.com/digitalautonomy/grumble.git
-    - cd grumble/
-    - git checkout c109af8d88b4b9cb77afe1f18572c66027cf8c0b
+    - git clone https://github.com/digitalautonomy/grumble.git grumble-0.0.1
+    - cd grumble-0.0.1/
+    - git checkout tags/v0.0.1
     - cd ..
-    - mv grumble/ grumble-c109af8d88b4b9cb77afe1f18572c66027cf8c0b
-    - tar zcf grumble-c109af8d88b4b9cb77afe1f18572c66027cf8c0b.tar.gz grumble-c109af8d88b4b9cb77afe1f18572c66027cf8c0b/
-    - mkdir f30 f31
-    - fedpkg --release f30 local
-    - 'find . -name "*fc30*.rpm" -exec mv {} f30 \;'
-    - fedpkg --release f31 local
-    - 'find . -name "*fc31*.rpm" -exec mv {} f31 \;'
-    - 'scp -r -P4243 f30/* fedora-repo@fedora.autonomia.digital:packages/upload/f30'
-    - 'scp -r -P4243 f31/* fedora-repo@fedora.autonomia.digital:packages/upload/f31'
-
-
-  artifacts:
-    paths:
-      - 'f30/*.rpm'
-      - 'f31/*.rpm'
+    - tar zcf grumble-0.0.1.tar.gz grumble-0.0.1/
+    - ./build_all.sh f30 f31 f32 f33 f34 f35 f36 f37 f38

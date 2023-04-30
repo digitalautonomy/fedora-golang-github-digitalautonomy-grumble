@@ -3,7 +3,7 @@
 
 # https://github.com/digitalautonomy/grumble
 %global goipath         github.com/digitalautonomy/grumble
-%global commit          c109af8d88b4b9cb77afe1f18572c66027cf8c0b
+Version:                0.0.1
 
 %gometa
 
@@ -15,8 +15,7 @@ library.}
 %global godocs          AUTHORS README.md pkg/cryptstate/testgen/README
 
 Name:           %{goname}
-Version:        0
-Release:        0.1%{?dist}
+Release:        1%{?dist}
 Summary:        Alternative Mumble server - this fork makes it possible to use Grumble as a library
 
 # Upstream license specification: BSD-3-Clause
@@ -62,6 +61,8 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %gopkgfiles
 
 %changelog
+* Sat Apr 29 13:00:00 -05 2023 CAD <fedora@autonomia.digital> 0.0.1-1
+- Update to first version
+
 * Mon Mar 16 12:37:43 -05 2020 rafael <rafael@autonomia.digital> - 0-0.1.20200316gitc109af8
 - Initial package
-
